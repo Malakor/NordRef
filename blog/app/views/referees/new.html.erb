@@ -1,0 +1,19 @@
+<h1>Nutzer Anlegen</h1>
+<%= form_for :referee, url: referees_path do |dat| %>
+<p>Der Benutzername wird automatisch aus den Daten generiert und per Mail zugeschickt</p>
+  <p>
+    <%= dat.label :Vorname %><br>
+    <%= dat.text_field :Vorname %>
+  </p>
+  <p>
+    <%= dat.label :Nachname %><br>
+    <%= dat.text_field :Nachname %>
+  </p>
+  <p>
+    <%= dat.label :EMail %><br>
+    <%= dat.text_field :EMail %>
+  </p>
+  <p>
+    <%= dat.submit %>
+  </p>
+<%end %>
