@@ -1,2 +1,20 @@
 <h1>Nutzer Auslesen</h1>
+<%= link_to 'Neuen Benutzer anlegen', new_referee_path %>
+
+<table>
+<tr>
+<th>ID:</th>
+<th>Vorname</th>
+<th>Name</th>
+<th>Mail</th>
+</tr>
+
+<% @referees.each do |referee| %>
+<tr>
+<td><%= referee.id %></td>
+<td><%= referee.firstname %></td>
+<td><%= referee.lastname %></td>
+<td><%= referee.mail %></td>
+<% end %>
+</table>
 

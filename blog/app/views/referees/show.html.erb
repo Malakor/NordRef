@@ -1,0 +1,10 @@
+<h1>Deine Daten</h1>
+<p>Wilkommen <%= @referee.firstname %></p>
+  <p>
+    Vorname	: <%= @referee.firstname %><br>
+    Name	: <%= @referee.lastname %><br>
+	Mail	: <%= @referee.mail %>
+  </p>
+
+<%= link_to 'Back', referees_path %>
+

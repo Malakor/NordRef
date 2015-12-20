@@ -1,19 +1,25 @@
 <h1>Nutzer Anlegen</h1>
+<%= link_to 'Back', referees_path %>
 <%= form_for :referee, url: referees_path do |dat| %>
 <p>Der Benutzername wird automatisch aus den Daten generiert und per Mail zugeschickt</p>
   <p>
-    <%= dat.label :Vorname %><br>
-    <%= dat.text_field :Vorname %>
+    <%= dat.label :Vorname %>*<br>
+    <%= dat.text_field :firstname %>
   </p>
   <p>
-    <%= dat.label :Nachname %><br>
-    <%= dat.text_field :Nachname %>
+    <%= dat.label :Nachname %>*<br>
+    <%= dat.text_field :lastname %>
   </p>
   <p>
-    <%= dat.label :EMail %><br>
-    <%= dat.text_field :EMail %>
+    <%= dat.label :"E-Mail" %>*<br>
+    <%= dat.text_field :mail %>
   </p>
   <p>
     <%= dat.submit %>
   </p>
 <%end %>
+
+<p>
+Benötigte Felder
+</p>
+
