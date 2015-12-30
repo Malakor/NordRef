@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  season_g: 1
+  amount_g: 1
+
+two:
+  season_g: 1
+  amount_g: 1

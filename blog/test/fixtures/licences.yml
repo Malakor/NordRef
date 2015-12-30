@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  licence_no: 1
+  season_l: 1
+  licence_type: MyString
+
+two:
+  licence_no: 1
+  season_l: 1
+  licence_type: MyString
