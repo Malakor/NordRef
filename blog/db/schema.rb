@@ -11,14 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206123013) do
+ActiveRecord::Schema.define(version: 20151230131336) do
+
+  create_table "clubs", force: :cascade do |t|
+    t.string   "fullname"
+    t.string   "shortform"
+    t.string   "regionalassociation"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "leadgames", force: :cascade do |t|
+    t.integer  "season_g"
+    t.integer  "amount_g"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "licences", force: :cascade do |t|
+    t.integer  "licence_no"
+    t.integer  "season_l"
+    t.string   "licence_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "referees", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.string   "mail"
+    t.integer  "club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "referees", ["club_id"], name: "index_referees_on_club_id"
 
 end

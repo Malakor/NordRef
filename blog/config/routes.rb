@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'landing_page/index'
 
-resources :referees
+resources :referees 
+resources :clubs
 
   root 'landing_page#index'
   # The priority is based upon order of creation: first created -> highest priority.

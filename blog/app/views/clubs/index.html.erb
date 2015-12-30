@@ -1,0 +1,20 @@
+<h1>Vereine Auslesen</h1>
+<%= link_to 'Neuen Verein anlegen', new_club_path %>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Vereinsname</th>
+<th>Kuerzel</th>
+<th>Landesverband</th>
+</tr>
+
+<% @clubs.each do |club| %>
+<tr>
+<td><%= club.id %></td>
+<td><%= club.fullname %></td>
+<td><%= club.shortform %></td>
+<td><%= club.regionalassociation%></td>
+<% end %>
+</table>
+

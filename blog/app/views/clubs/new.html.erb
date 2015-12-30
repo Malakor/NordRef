@@ -1,0 +1,25 @@
+<h1>Verein Anlegen</h1>
+<%= link_to 'Back', referees_path %>
+<%= form_for :club, url: clubs_path do |dat| %>
+<p>Hier wird ein Verein mit Namen, Kürzel und Landesverband angelegt</p>
+  <p>
+    <%= dat.label :Vereinsname %>*<br>
+    <%= dat.text_field :fullname %>
+  </p>
+  <p>
+    <%= dat.label :Abkuerzung %>*<br>
+    <%= dat.text_field :shortform %>
+  </p>
+  <p>
+	<%= dat.label :Landesverband %>*<br>
+	<%= dat.text_field :regionalassociation %>
+  </p>
+  <p>
+    <%= dat.submit %>
+  </p>
+<%end %>
+
+<p>
+Benötigte Felder
+</p>
+

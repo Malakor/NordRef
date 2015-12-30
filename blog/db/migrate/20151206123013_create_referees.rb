@@ -5,6 +5,8 @@ class CreateReferees < ActiveRecord::Migration
       t.string :lastname
       t.string :mail
 
+	  t.references  :club, index: true, foreign_key: true 
+
       t.timestamps null: false
     end
   end
