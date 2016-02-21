@@ -1,11 +1,15 @@
-<h1>Deine Daten</h1>
-<p>Wilkommen <%= @course.course_name %></p>
+<h1>Kursdetails</h1>
+<p>Kurs:  <%= @course.course_name %></p>
   <p>
-    Vorname	: <%= @referee.firstname %><br>
-    Name	: <%= @referee.lastname %><br>
-	Mail	: <%= @referee.mail %><br>
-	Verein	: <%= @referee.club.fullname %><br>
+    Ort		: <%= @course.location_string %><br>
+    Typ		: <%= @course.course_type %><br>
+	L1		: <%= @course.mistakesallowed_L1 %><br>
+	L2		: <%= @course.mistakesallowed_L2 %><br>
+	LJ		: <%= @course.mistakesallowed_LJ %><br>
+	Capacity: <%= @course.capacity %><br>
   </p>
 
-<%= link_to 'Back', referees_path %>
+
+<p>Teilnehmer:</p>
+<%= link_to 'Back', courses_path %>
 
