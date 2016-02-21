@@ -14,19 +14,20 @@
 <th>Verein</th>
 <th>Bearbeiten</th>
 <th>Anzeigen</th>
+<th>Testfeld</th>
 <th></th>
 </tr>
 
 <% @referees.each do |referee| %>
-<% club = Club.find(referee.club_id) %>
 <tr>
 <td><%= referee.id %></td>
 <td><%= referee.firstname %></td>
 <td><%= referee.lastname %></td>
 <td><%= referee.mail %></td>
-<td><%= club.shortform %></td>
+<td><%= referee.club.shortform %></td>
 <td><%= link_to 'be', edit_referee_path(referee) %></td>
 <td><%= link_to 'disp', referee_path(referee) %></td>
+<td><%= referee.licence_id %></td>
 <% end %>
 </table>
 

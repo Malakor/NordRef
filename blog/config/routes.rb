@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 resources :referees 
 resources :clubs
+resources :licences
 
   root 'landing_page#index'
   # The priority is based upon order of creation: first created -> highest priority.
