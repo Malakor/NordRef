@@ -1,0 +1,33 @@
+
+<h1>Nutzer Auslesen</h1>
+<%= link_to 'Neuen Benutzer anlegen', new_referee_path %>
+<%= link_to 'Neuen Verein anlegen', new_club_path %>
+<%= link_to 'Vereine', clubs_path %>
+<%= link_to 'Schiedsrichter', referees_path %>
+
+<table>
+<tr>
+<th>ID:</th>
+<th>Vorname</th>
+<th>Name</th>
+<th>Mail</th>
+<th>Verein</th>
+<th>Bearbeiten</th>
+<th>Anzeigen</th>
+<th>Testfeld</th>
+<th></th>
+</tr>
+
+<% @referees.each do |referee| %>
+<tr>
+<td><%= referee.id %></td>
+<td><%= referee.firstname %></td>
+<td><%= referee.lastname %></td>
+<td><%= referee.mail %></td>
+<td><%= referee.club.shortform %></td>
+<td><%= link_to 'be', edit_referee_path(referee) %></td>
+<td><%= link_to 'disp', referee_path(referee) %></td>
+<td><%= referee.licence_id %></td>
+<% end %>
+</table>
+

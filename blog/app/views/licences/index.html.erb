@@ -1,0 +1,21 @@
+<h1>Alle Schiedsrichter anzeigen</h1>
+
+<table>
+<tr>
+<th>Lizenz</th>
+<th>Vorname</th>
+<th>Name</th>
+<th>Verein</th>
+<th>Alter</th>
+</tr>
+
+<% @licence.each do |licence| %>
+<tr>
+<td><%= licence.licence_no %></td>
+<td><%= licence.referee.firstname %></td>
+<td><%= licence.referee.lastname %></td>
+<td><%= licence.referee.club.shortform%></td>
+<td><%= licence.referee.age%></td>
+<% end %>
+</table>
+

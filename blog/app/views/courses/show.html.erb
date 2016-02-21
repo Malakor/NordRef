@@ -1,0 +1,11 @@
+<h1>Deine Daten</h1>
+<p>Wilkommen <%= @course.course_name %></p>
+  <p>
+    Vorname	: <%= @referee.firstname %><br>
+    Name	: <%= @referee.lastname %><br>
+	Mail	: <%= @referee.mail %><br>
+	Verein	: <%= @referee.club.fullname %><br>
+  </p>
+
+<%= link_to 'Back', referees_path %>
+

@@ -1,0 +1,40 @@
+<%= form_for @referee do |dat| %>
+	<% if @referee.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@referee.errors.count, "Fehler") %> sind aufgetreten Eintrag nicht gespeichert
+			</h2>
+			<ul>
+				<%= @referee.errors.full_messages.each do |ermsg| %>
+				<li><%= ermsg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+<p>Der Benutzername wird automatisch aus den Daten generiert und per Mail zugeschickt</p>
+  <p>
+    <%= dat.label :Vorname %>*<br>
+    <%= dat.text_field :firstname %>
+  </p>
+  <p>
+    <%= dat.label :Nachname %>*<br>
+    <%= dat.text_field :lastname %>
+  </p>
+  <p>
+    <%= dat.label :"E-Mail" %>*<br>
+    <%= dat.text_field :mail %>
+  </p>
+  <p>
+    <%= dat.label "Verein" %><br>
+	<%= select_tag('referee[club_id]',  options_from_collection_for_select(Club.all, :id, :fullname)) %>
+  </p>
+  <p>
+    <%= dat.submit %>
+  </p>
+<%end %>
+
+<p>
+Benötigte Felder
+</p>
+
