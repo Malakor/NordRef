@@ -1,33 +1,47 @@
-<%= form_for @referee do |dat| %>
-	<% if @referee.errors.any? %>
+<%= form_for @course do |dat| %>
+	<% if @course.errors.any? %>
 		<div id="error_explanation">
 			<h2>
-				<%= pluralize(@referee.errors.count, "Fehler") %> sind aufgetreten Eintrag nicht gespeichert
+				<%= pluralize(@course.errors.count, "Fehler") %> sind aufgetreten Eintrag nicht gespeichert
 			</h2>
 			<ul>
-				<%= @referee.errors.full_messages.each do |ermsg| %>
+				<%= @rcourse.errors.full_messages.each do |ermsg| %>
 				<li><%= ermsg %></li>
 				<% end %>
 			</ul>
 		</div>
 	<% end %>
 
-<p>Der Benutzername wird automatisch aus den Daten generiert und per Mail zugeschickt</p>
+ 
+<p>Lege hier einen Kurs an!</p>
   <p>
-    <%= dat.label :Vorname %>*<br>
-    <%= dat.text_field :firstname %>
+    <%= dat.label :Kursname %>*<br>
+    <%= dat.text_field :course_name %>
   </p>
   <p>
-    <%= dat.label :Nachname %>*<br>
-    <%= dat.text_field :lastname %>
+    <%= dat.label :Ort %>*<br>
+    <%= dat.text_field :location_string %>
   </p>
   <p>
-    <%= dat.label :"E-Mail" %>*<br>
-    <%= dat.text_field :mail %>
+    <%= dat.label :"Kurs-Typ" %>*<br>
+    <%= dat.text_field :course_type %>
   </p>
   <p>
-    <%= dat.label "Verein" %><br>
-	<%= select_tag('referee[club_id]',  options_from_collection_for_select(Club.all, :id, :fullname)) %>
+    <%= dat.label :"L1-Fehlerpunkte" %>*<br>
+    <%= dat.text_field :mistakesallowed_L1 %>
+  </p>
+  <p>
+  <p>
+    <%= dat.label :"L2-Fehlerpunkte" %>*<br>
+    <%= dat.text_field :mistakesallowed_L2 %>
+  </p>
+  <p>
+    <%= dat.label :"LJ-Fehlerpunkte" %>*<br>
+    <%= dat.text_field :mistakesallowed_LJ %>
+  </p>
+  <p>
+    <%= dat.label :"Kapazität" %>*<br>
+    <%= dat.text_field :capacity %>
   </p>
   <p>
     <%= dat.submit %>

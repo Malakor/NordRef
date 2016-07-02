@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p>	
+	<%= link_to 'Schiedsrichter', referees_path %>
+	<%= link_to 'Vereine', clubs_path %>
+	<%= link_to 'Kurse', courses_path %>
+</p>
+<p>
+	<%= link_to 'Neuen Benutzer anlegen', new_referee_path %>
+	<%= link_to 'Neuen Verein anlegen', new_club_path %>
+	<%= link_to 'Neuen Kurse anlegen', new_course_path %>
+</p>
 
 <%= yield %>
 
