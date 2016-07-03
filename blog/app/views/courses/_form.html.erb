@@ -24,7 +24,7 @@
   </p>
   <p>
     <%= dat.label :"Kurs-Typ" %>*<br>
-    <%= dat.text_field :course_type %>
+    <%= select_tag('course[course_type]',  options_for_select(["Ausbilder-G" , "Ausbilder-F", "J", "G", "F", "NT"],"Ausbilder-F")) %>
   </p>
   <p>
     <%= dat.label :"L1-Fehlerpunkte" %>*<br>
