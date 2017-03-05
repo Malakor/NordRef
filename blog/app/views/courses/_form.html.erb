@@ -5,7 +5,7 @@
 				<%= pluralize(@course.errors.count, "Fehler") %> sind aufgetreten Eintrag nicht gespeichert
 			</h2>
 			<ul>
-				<%= @rcourse.errors.full_messages.each do |ermsg| %>
+				<%= @course.errors.full_messages.each do |ermsg| %>
 				<li><%= ermsg %></li>
 				<% end %>
 			</ul>

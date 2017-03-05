@@ -30,6 +30,14 @@
 	<%= select_tag('referee[club_id]',  options_from_collection_for_select(Club.all, :id, :fullname)) %>
   </p>
   <p>
+	<%= dat.label "Status" %><br>
+	<%= select_tag('referee[role]', options_for_select([["Schiedsrichter", 5], ["Vereinsreader", 4], ["Vereinsadmin", 3], ["Ausbilder", 2],["Admin", 1]])) %>
+  </p>
+  <p>
+  </p>
+	<%= dat.label "Password" %><br>
+	<%= dat.password_field :password %>
+  <p>
     <%= dat.submit %>
   </p>
 <%end %>

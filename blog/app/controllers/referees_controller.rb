@@ -13,7 +13,9 @@ class RefereesController < ApplicationController
 		@referee = Referee.find(params[:id])
 	end
 	def create
+		
 		@referee = Referee.new(referee_param)
+		@referee.username = referee_userName
 #		@referee.club = Club.where(fullname: :test).first
 #@referee.club_id = 4
 #		@referee = Referee.new(params[:referee])	
@@ -39,6 +41,13 @@ class RefereesController < ApplicationController
 
   private
 	def referee_param
-		params.require(:referee).permit(:firstname, :lastname, :mail, :club_id)
+		params.require(:referee).permit(:firstname, :lastname, :mail, :club_id, :role, :password)
+	end
+	def referee_userName
+		if Referee.count
+			@referee.firstname + "." + @referee.lastname + (Referee.last.id+1).to_s
+		else
+			@referee.firstname + "." + @referee.lastname
+		end
 	end
 end

@@ -5,6 +5,7 @@
     Name	: <%= @referee.lastname %><br>
 	Mail	: <%= @referee.mail %><br>
 	Verein	: <%= Club.find(@referee.club).fullname %><br>
+	Nochmal : <%= @referee.club.fullname %><br>
   </p>
 
 <%= link_to 'Back', referees_path %>

@@ -12,7 +12,7 @@
   </p>
   <p>
 	<%= dat.label :Landesverband %>*<br>
-	<%= dat.text_field :regionalassociation %>
+<%= select_tag('club[regionalassociation]',  options_for_select(["FLV-SH" , "FVN", "FD", "FVBB", "FVBW", "FVBB"])) %>
   </p>
   <p>
     <%= dat.submit %>
