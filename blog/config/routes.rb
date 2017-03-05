@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+
+  get 'registration/index'
+
   get 'landing_page/index'
+
+resources :sessions, only: [:new, :create, :destroy]
+get 'login', to: 'sessions#new', as: 'login'
+get 'logout', to: 'sessions#destroy', as: 'logout'
 
 resources :referees 
 resources :clubs
 resources :licences
 resources :courses
+resources :registrations
 
   root 'landing_page#index'
   # The priority is based upon order of creation: first created -> highest priority.

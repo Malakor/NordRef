@@ -1,6 +1,7 @@
 <h1>LandingPage#index</h1>
 <h2>Willkommen zum NordRef!-Portal</h2>
 <p>Find me in app/views/landing_page/index.html.erb</p>
-<%= link_to 'Vereine', clubs_path %>
-<%= link_to 'Schiedsrichter', referees_path %>
+<% if current_user %>
 <%= link_to 'Kurse - Übersicht', courses_path %>
+<%= link_to 'Eigene Daten', root_url %>
+<% end %>

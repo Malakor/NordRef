@@ -3,7 +3,10 @@ class CreateReferees < ActiveRecord::Migration
     create_table :referees do |t|
       t.string :firstname
       t.string :lastname
-      t.string :mail
+      t.string :mail 
+      t.string :username
+      t.integer :role
+	t.string :password_digest          
 
 	  t.references  :club, index: true, foreign_key: true 
 
