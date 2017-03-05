@@ -1,7 +1,7 @@
 class LicencesController < ApplicationController
 	def index
 		# Hier alle anzeigen oder nur alle der Saison?
-		@licenses = Licences.all
+		@licenses = Licence.all
 	end
 	def show
 		# Hier alle Lizenzen des Refs anzeigen
@@ -19,10 +19,10 @@ class LicencesController < ApplicationController
 		end
 	end
 	def edit
-		@licence = Licence.find(params[:id]
+		@licence = Licence.find(params[:id])
 	end
 	def update
-		@licence = Licence.find(params[:id]
+		@licence = Licence.find(params[:id])
 		
 		if @licence.update(licence_param)
 			redirect_to @licence

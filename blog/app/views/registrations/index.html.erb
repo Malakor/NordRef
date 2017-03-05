@@ -1,0 +1,19 @@
+<h1>Anmeldungen anzeigen</h1>
+
+<table>
+<tr>
+<th>Kurs</th>
+<th>Name</th>
+<th>Verein</th>
+<th>Zeit</th>
+</tr>
+
+<% @registrations.each do |registration| %>
+<tr>
+<td><%= registration.course.course_id %> </td>
+<td><%= registration.referee.firstname %> <%= registration.referee.lastname %> </td>
+<td><%= registration.referee.club.shortform %></td>
+<td><%= registration.timestamp %></td>
+<% end %>
+</table>
+

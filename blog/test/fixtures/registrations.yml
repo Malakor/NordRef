@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mistakes: 1
+  participated: false
+  passed: false
+  deregistered: false
+  registrationthrough: 1
+
+two:
+  mistakes: 1
+  participated: false
+  passed: false
+  deregistered: false
+  registrationthrough: 1

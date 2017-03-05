@@ -1,0 +1,28 @@
+<%= form_for @registration do |dat| %>
+	<% if @registration.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@registration.errors.count, "Fehler") %> sind aufgetreten Eintrag nicht gespeichert
+			</h2>
+			<ul>
+				<%= @registration.errors.full_messages.each do |ermsg| %>
+				<li><%= ermsg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+<p>Nur Kurse die noch frei sind und für die der Schiedsrichter zugelassen ist werden angezeigt</p>
+  <p>
+    <%= dat.label "Kurs" %><br>
+	<%= select_tag('registration[:course_id]' , options_from_collection_for_select(Course.all, :id, :course_name)) %>
+  </p>
+  <p>
+    <%= dat.submit %>
+  </p>
+<%end %>
+
+<p>
+Benötigte Felder
+</p>
+
